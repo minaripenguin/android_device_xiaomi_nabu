@@ -4,3 +4,6 @@ ro.config.vc_call_vol_steps=7
 
 # radio
 ro.radio.noril=true
+
+# Fs-verity
+ro.apk_verity.mode=2
