@@ -67,6 +67,9 @@ void set_device_properties(const dv &variant)
   property_override("ro.build.description", variant.build_description.c_str());
   property_override("bluetooth.device.default_name", variant.model.c_str());
   property_override("vendor.usb.product_string", variant.model.c_str());
+  property_override("ro.rising.chipset", "Qualcomm Snapdragon 860 (7 nm)");
+  property_override("ro.rising.device", "Xiaomi Mi Pad 5");
+  property_override("ro.rising.maintainer", "minaripenguin");
 }
 
 void witch_nabu()
