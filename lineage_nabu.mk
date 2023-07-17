@@ -30,8 +30,6 @@ PRODUCT_MODEL := Xiaomi Pad 5
 
 # GMS
 WITH_GMS := true
-TARGET_CORE_GMS := true
-TARGET_CORE_GMS_EXTRAS := true
 
 RISING_MAINTAINER := minaripenguin
 TARGET_ENABLE_BLUR := true
