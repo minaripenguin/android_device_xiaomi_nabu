@@ -1,1 +1,2 @@
 allow system_suspend sysfs_wakeup:file read;
+allow system_suspend sysfs_wakeup:dir read;
