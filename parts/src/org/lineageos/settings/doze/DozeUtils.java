@@ -21,6 +21,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.display.AmbientDisplayConfiguration;
+import android.os.Handler;
+import android.os.PowerManager;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
@@ -83,6 +85,21 @@ public final class DozeUtils {
     public static boolean isDozeEnabled(Context context) {
         return Settings.Secure.getInt(context.getContentResolver(),
                 DOZE_ENABLED, 1) != 0;
+    }
+
+    public static void wakeUpScreen(Context context) {
+        if (DEBUG) Log.d(TAG, "Wake up screen");
+        PowerManager powerManager = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+        PowerManager.WakeLock wakeLock = powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK | PowerManager.ACQUIRE_CAUSES_WAKEUP, "DozeWakeup");
+        wakeLock.acquire(1250L);
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                wakeLock.release();
+            }
+        }, 1250);
     }
 
     public static void launchDozePulse(Context context) {

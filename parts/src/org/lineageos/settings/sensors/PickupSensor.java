@@ -36,7 +36,7 @@ public class PickupSensor implements SensorEventListener {
     private static final boolean DEBUG = false;
     private static final String TAG = "PickupSensor";
 
-    private static final int MIN_PULSE_INTERVAL_MS = 2500;
+    private static final int MIN_SCREEN_WAKE_INTERVAL_MS = 1000;
 
     private SensorManager mSensorManager;
     private Sensor mSensor;
@@ -61,14 +61,14 @@ public class PickupSensor implements SensorEventListener {
         if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
 
         long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
-        if (delta < MIN_PULSE_INTERVAL_MS) {
+        if (delta < MIN_SCREEN_WAKE_INTERVAL_MS) {
             return;
         }
 
         mEntryTimestamp = SystemClock.elapsedRealtime();
 
         if (event.values[0] == 1) {
-            DozeUtils.launchDozePulse(mContext);
+            DozeUtils.wakeUpScreen(mContext);
         }
     }
 
