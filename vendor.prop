@@ -328,3 +328,8 @@ ro.lmk.stall_limit_critical=40
 ro.lmk.psi_scrit_complete_stall_ms=150
 ro.lmk.direct_reclaim_pressure=45
 ro.lmk.reclaim_scan_threshold=0
+
+# ZRAM writeback
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=1440
+ro.zram.periodic_wb_delay_hours=24
