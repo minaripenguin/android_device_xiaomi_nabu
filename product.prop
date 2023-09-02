@@ -1,6 +1,9 @@
 # Audio
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=7
+audio.offload.min.duration.secs=30
+persist.vendor.audio.hac.enable=false
+persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 
 # Display
 ro.surface_flinger.protected_contents=true
