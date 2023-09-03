@@ -44,6 +44,8 @@ public class PickupSensor implements SensorEventListener {
     private ExecutorService mExecutorService;
 
     private long mEntryTimestamp;
+    
+    private boolean isDeviceInDozePulse = false;
 
     public PickupSensor(Context context) {
         mContext = context;
@@ -68,7 +70,13 @@ public class PickupSensor implements SensorEventListener {
         mEntryTimestamp = SystemClock.elapsedRealtime();
 
         if (event.values[0] == 1) {
-            DozeUtils.wakeUpScreen(mContext);
+            if (!isDeviceInDozePulse) {
+                DozeUtils.launchDozePulse(mContext);
+                isDeviceInDozePulse = true;
+            } else {
+                DozeUtils.wakeUpScreen(mContext);
+                isDeviceInDozePulse = false;
+            }
         }
     }
 
