@@ -173,6 +173,7 @@ vendor.display.enable_optimize_refresh=1
 vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
 vendor.display.disable_metadata_dynamic_fps=1
+debug.sf.predict_hwc_composition_strategy=0
 
 # Dolby
 persist.vendor.audio_fx.current=dolby
