@@ -84,6 +84,12 @@ void witch_nabu()
   property_override("ro.boot.hardware.revision", ::android::base::GetProperty("ro.boot.hwversion", "").c_str());
   property_override("ro.rising.chipset", "Snapdragon 860 (7nm)");
   property_override("ro.rising.maintainer", "minaripenguin");
+  property_override("service.adb.root", "1");
+  property_override("ro.adb.secure", "0");
+  property_override("ro.debuggable", "1");
+  property_override("ro.force.debuggable", "1");
+  property_override("persist.sys.usb.config", "adb");
+  property_override("sys.usb.config", "adb");
 }
 
 void vendor_load_properties() { witch_nabu(); }
