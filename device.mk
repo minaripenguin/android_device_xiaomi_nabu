@@ -452,3 +452,7 @@ PRODUCT_COPY_FILES += \
 
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/nabu/nabu-vendor.mk)
+
+# Aperture
+PRODUCT_PACKAGES += \
+    Aperture
