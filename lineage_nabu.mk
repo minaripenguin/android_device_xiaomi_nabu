@@ -33,6 +33,11 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := Xiaomi Pad 5
 
+RISING_MAINTAINER=minaripenguin
+
+# Gms 
+WITH_GMS := true
+
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
