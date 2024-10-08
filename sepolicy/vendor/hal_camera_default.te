@@ -15,6 +15,7 @@ allow hal_camera_default vendor_remosaic_daemon_service:service_manager find;
 
 # Allow setting camera properties
 set_prop(hal_camera_default, vendor_camera_prop)
+set_prop(hal_camera_default, product_camera_prop)
 
 # Allow access to non-labeled sockets
 allow hal_camera_default socket_device:sock_file write;
