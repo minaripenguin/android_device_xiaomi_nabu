@@ -25,6 +25,10 @@ ro.hardware.fp                                                                  
 sys.panel.display                                                                                   u:object_r:product_fingerprint_prop:s0
 sys.panel.touch_vendor                                                                              u:object_r:product_fingerprint_prop:s0
 
+# Hardware
+ro.hardware.chipname                                                                                u:object_r:product_deviceid_prop:s0
+ro.vendor.aware_available                                                                           u:object_r:product_deviceid_prop:s0
+
 # IMEI
 persist.radio.imei                                                                                  u:object_r:product_deviceid_prop:s0
 persist.radio.meid                                                                                  u:object_r:product_deviceid_prop:s0
